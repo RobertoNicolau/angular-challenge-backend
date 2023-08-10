@@ -14,7 +14,7 @@ export async function answerRoutes(app: FastifyInstance) {
       return res.code(400).send({status: 'error', message: 'Por favor, preencha todos os campos!'});
     }
 
-    if(answer.toUpperCase() !== 'SIM'){
+    if(answer.toUpperCase().trim() !== 'SIM'){
       return res.code(400).send({ received: answer, status: 'error', message: 'Erro: Resposta inválida!'});
     }
     return res.code(200).send({received: answer, status: 'success', message: 'Parabéns! Vocé está prestes a se juntar ao time ANGULAR!'});
