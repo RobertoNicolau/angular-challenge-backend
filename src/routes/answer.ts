@@ -15,9 +15,9 @@ export async function answerRoutes(app: FastifyInstance) {
     }
 
     if(answer.toUpperCase().trim() !== 'SIM'){
-      return res.code(400).send({ received: answer, status: 'error', message: 'Erro: Resposta inválida!'});
+      return res.code(400).send({ received: answer, status: 'error', message: 'Erro: Que Pena, sua resposta não foi aprovada.'});
     }
-    return res.code(200).send({received: answer, status: 'success', message: 'Parabéns! Vocé está prestes a se juntar ao time ANGULAR!'});
+    return res.code(200).send({received: answer, status: 'success', message: 'Parabéns! Vocé está prestes a se juntar ao time CONVEM!'});
   })
 
   app.get('/answer', async (req, res) => {
